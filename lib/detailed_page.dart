@@ -74,7 +74,7 @@ class _DetailedPageState extends State<DetailedPage> {
                         itemCount: news.length + 1,
                         itemBuilder: (context, index) {
                           if (news.length == index) {
-                            return isExpanded
+                            return !isExpanded
                                 ? GestureDetector(
                                     onTap: () {
                                       for (int i = 0; i < news.length; i++) {
@@ -92,6 +92,9 @@ class _DetailedPageState extends State<DetailedPage> {
                                     ),
                                   )
                                 : Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       GestureDetector(
                                         child: const Text(
@@ -117,7 +120,7 @@ class _DetailedPageState extends State<DetailedPage> {
                                           }
                                         },
                                         child: const Text(
-                                          'Expand',
+                                          'Simplify',
                                           style: TextStyle(
                                             fontSize: 18,
                                           ),
